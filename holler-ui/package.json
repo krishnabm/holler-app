@@ -1,0 +1,11 @@
+{
+  "name": "@holler-app/holler-ui",
+  "version": "0.1.0",
+  "description": "UI package for holler-app",
+  "private": "true",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Krishna B.M.",
+  "license": "ISC"
+}

@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@holler-app/ux": ["../../dist/@holler-app/ux"],
+    }
+  }
+}
+  

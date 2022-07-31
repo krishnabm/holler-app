@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig.paths",
+
+  "include": ["../../**/*.ts"], //placeholder, will be overriden
+  "exclude": [],                //placeholder, will be overriden
+  
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "baseUrl": "./",
+    "sourceMap": true,
+    "declaration": true,
+    "downlevelIteration": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "Node",
+    "importHelpers": true,
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+  }
+}

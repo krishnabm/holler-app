@@ -1,0 +1,10 @@
+{
+    "extends": "../conf/build/tsconfig.json",
+    "files": ["src/main.ts"],
+    "compilerOptions": {
+        "baseUrl": "./",
+        "outDir": "../dist/holler-ui/",
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["src/test.ts", "src/**/*.spec.ts"]
+}
