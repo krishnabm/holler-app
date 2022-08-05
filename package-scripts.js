@@ -1,4 +1,4 @@
-const npsUtils = require("nps-utils");
+const { series } = require("nps-utils");
 
 module.exports = {
   scripts: {
@@ -8,9 +8,12 @@ module.exports = {
       dev: 'tauri dev',
     },
     build: {
-      default: npsUtils.series('nps build.ui'),
+      default: series('nps clean', 'nps build.ui'),
       ui: 'webpack --config ./conf/build/webpack.config.js',
       tsc: 'tsc -p ./holler-ui/tsconfig.json',
+    },
+    clean: {
+      default: series('rimraf dist'),
     },
   }
 };
