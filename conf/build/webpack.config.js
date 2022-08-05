@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: "development", // "production" | "development" | "none"
@@ -50,6 +51,13 @@ module.exports = {
         uniqueName: "my-application", // (defaults to package.json "name")
         // unique name for this build to avoid conflicts with other builds in the same HTML
     },
+    plugins: [
+      new HtmlWebpackPlugin({
+        title: 'Holler App',
+        filename: 'index.html',
+        template: './holler-ui/src/index.html'
+      })
+    ],
     performance: {
         hints: "warning", // "error", false
     },
