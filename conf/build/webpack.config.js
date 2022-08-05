@@ -55,7 +55,7 @@ module.exports = {
       new HtmlWebpackPlugin({
         title: 'Holler App',
         filename: 'index.html',
-        template: './holler-ui/src/index.html'
+        template: './holler-ui/index.html'
       })
     ],
     performance: {
