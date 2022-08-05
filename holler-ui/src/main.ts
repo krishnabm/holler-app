@@ -5,3 +5,8 @@ export function run(params:any) {
     });
 };
 
+// access the pre-bundled global API functions
+const invoke = window['__TAURI__'].invoke;
+
+invoke('greet', { name: 'Rossy!!' })
+    .then((response) => console.log(response));
