@@ -2,6 +2,8 @@
     "extends": "../conf/build/tsconfig.json",
     "files": ["src/main.ts"],
     "compilerOptions": {
+        "target": "ES5",
+        "module": "CommonJS",
         "baseUrl": "./",
         "outDir": "../dist/holler-ui/",
     },
