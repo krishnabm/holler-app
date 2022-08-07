@@ -1,7 +1,8 @@
 {
     "extends": "../conf/build/tsconfig.json",
-    "files": ["src/main.ts"],
+    "files": ["src/main.tsx"],
     "compilerOptions": {
+        "jsx": "react",
         "target": "ES5",
         "module": "CommonJS",
         "baseUrl": "./",

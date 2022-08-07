@@ -5,14 +5,14 @@ module.exports = {
     mode: "development", // "production" | "development" | "none"
 
     entry: {
-        hollerUi: path.resolve(__dirname,"../../holler-ui/src/main.ts"),
+        hollerUi: path.resolve(__dirname,"../../holler-ui/src/main.tsx"),
     },
     module: {
         rules: [
             {
               test: /\.tsx?$/,
               include: [
-                path.resolve(__dirname,"../../holler-ui/src/main.ts")
+                path.resolve(__dirname,"../../holler-ui/src/main.tsx")
               ],
               exclude: [
                 /node_modules/
