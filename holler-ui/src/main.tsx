@@ -1,9 +1,9 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import axios from "axios";
 import { AddUserProps, CardListProps, CardProps } from "./contracts/props";
 import { AddUserState } from "./contracts/states";
 import { getName, getTauriVersion, getVersion } from "@tauri-apps/api/app";
+import { fetch } from "@tauri-apps/api/http";
 
 // access the pre-bundled global API functions
 const TAURI_API = window["__TAURI__"];
@@ -58,13 +58,20 @@ class AddUser extends React.Component<AddUserProps, AddUserState> {
     event.preventDefault();
     let uname = this.state.username;
     try {
-      var response = await axios.get(`https://api.github.com/users/${uname}`);
+      var response = await fetch(`https://api.github.com/users/${uname}`, {
+        method: "GET",
+        timeout: 30,
+      });
 
-      this.props.onNewCard(this.appenderFn, response.data);
-    } catch (ex) {
-      if (ex.response.request.status == 404) {
-        window.alert(`User "${uname}" not found`);
+      if (response.ok) {
+        this.props.onNewCard(this.appenderFn, response.data);
+      } else {
+        if (response.status == 404) {
+          window.alert(`User "${uname}" not found`);
+        }
       }
+    } catch (ex) {
+      throw ex;
     }
   };
   constructor(props) {
