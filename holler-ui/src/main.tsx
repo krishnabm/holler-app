@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import axios from "axios";
 import { AddUserProps, CardListProps, CardProps } from "./contracts/props";
 import { AddUserState } from "./contracts/states";
+import { getName, getTauriVersion, getVersion } from "@tauri-apps/api/app";
 
 // access the pre-bundled global API functions
 const TAURI_API = window["__TAURI__"];
@@ -104,8 +105,13 @@ class App extends React.Component {
 
     appenderFn.call(this, data);
   };
-  constructor(props) {
+  constructor(props: {} | Readonly<{}>) {
     super(props);
+
+    // demo tauri apis
+    getName().then((name) => console.log("appName - ", name));
+    getTauriVersion().then((ver) => console.log("Tauri Version - ", ver));
+    getVersion().then((appVer) => console.log("App Version - ", appVer));
   }
   render() {
     return (

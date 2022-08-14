@@ -1,50 +1,45 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"label": "BuildUi",
-			"detail": "Build holler ui",
-			"type": "shell",
-			"command": "npm start build",
-			"windows": {
-				"command": "npm start build"
-			},
-			"group": "build",
-			"presentation": {
-				"reveal": "always",
-				"panel": "shared"
-			},
-			"problemMatcher": [
-				"$eslint-compact"
-			]
-		},
-		{
-			"label": "RunTauri",
-			"detail": "Run holler ui",
-			"type": "shell",
-			"command": "npm start serve",
-			"windows": {
-				"command": "npm start serve"
-			},
-			"group": "build",
-			"presentation": {
-				"reveal": "always",
-				"panel": "shared"
-			}
-		},
-		{
-            "label": "Build & Run",
-            "type": "shell",
-			"detail": "Build and run holler ui",
-            "dependsOrder": "sequence",
-            "dependsOn": [
-                "BuildUi",
-                "RunTauri",
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": false
-            }
-        },
-	]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "BuildUi",
+      "detail": "Build holler ui",
+      "type": "shell",
+      "command": "npm start build",
+      "windows": {
+        "command": "npm start build"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": ["$eslint-compact"]
+    },
+    {
+      "label": "RunTauri",
+      "detail": "Run holler ui",
+      "type": "shell",
+      "command": "npm start serve",
+      "windows": {
+        "command": "npm start serve"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Build & Run",
+      "type": "shell",
+      "detail": "Build and run holler ui",
+      "dependsOrder": "sequence",
+      "dependsOn": ["BuildUi", "RunTauri"],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    }
+  ]
 }
