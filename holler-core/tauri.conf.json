@@ -13,11 +13,15 @@
   },
   "tauri": {
     "allowlist": {
-      "all": true,
+      "http": {
+        "request": true,
+        "scope": ["https://api.github.com/users/*"]
+      },
       "dialog": {
-        "all": true, 
-        "open": true,
-        "save": true 
+        "message": true
+      },
+      "notification": {
+        "all": true
       }
     },
     "bundle": {
