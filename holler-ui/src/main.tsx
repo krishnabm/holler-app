@@ -3,14 +3,18 @@ import { createRoot } from "react-dom/client";
 import { AddUserProps, CardListProps, CardProps } from "./contracts/props";
 import { AddUserState } from "./contracts/states";
 import { getName, getTauriVersion, getVersion } from "@tauri-apps/api/app";
+import {
+  isPermissionGranted,
+  requestPermission,
+  sendNotification,
+} from "@tauri-apps/api/notification";
 import { fetch } from "@tauri-apps/api/http";
-
-// access the pre-bundled global API functions
-const TAURI_API = window["__TAURI__"];
+import { invoke } from "@tauri-apps/api/tauri";
 
 // Test API by logging a custom message at statup
-TAURI_API.invoke("test_fetch").then(
-  (response) => (document.getElementById("app_content")!.innerHTML = response)
+invoke("test_fetch").then(
+  (response: string) =>
+    (document.getElementById("app_content")!.innerHTML = response)
 );
 
 /**
@@ -67,7 +71,17 @@ class AddUser extends React.Component<AddUserProps, AddUserState> {
         this.props.onNewCard(this.appenderFn, response.data);
       } else {
         if (response.status == 404) {
-          window.alert(`User "${uname}" not found`);
+          let permissionGranted = await isPermissionGranted();
+          if (!permissionGranted) {
+            const permission = await requestPermission();
+            permissionGranted = permission === "granted";
+          }
+          if (permissionGranted) {
+            sendNotification({
+              title: "Not Found",
+              body: `User "${uname}" not found`,
+            });
+          }
         }
       }
     } catch (ex) {
