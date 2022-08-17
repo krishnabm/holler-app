@@ -11,9 +11,6 @@ module.exports = {
         rules: [
             {
               test: /\.tsx?$/,
-              include: [
-                path.resolve(__dirname,"../../holler-ui/src/main.tsx")
-              ],
               exclude: [
                 /node_modules/
               ],
@@ -31,6 +28,17 @@ module.exports = {
             {
               test: /\.html$/i,
               loader: "html-loader",
+            },
+            {
+              test: /\.s[ac]ss$/i,
+              use: [
+                // Creates `style` nodes from JS strings
+                "style-loader",
+                // Translates CSS into CommonJS
+                "css-loader",
+                // Compiles Sass to CSS
+                "sass-loader",
+              ],
             },
         ]
     },
