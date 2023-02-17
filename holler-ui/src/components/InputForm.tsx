@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 export const InputForm = (props) => {
-  let [text, setText] = useState("");
+  let [text, setText] = useState('');
 
   let submitText = (event) => {
     event.preventDefault();
