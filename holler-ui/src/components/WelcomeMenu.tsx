@@ -1,9 +1,9 @@
 import React, { SyntheticEvent, useRef } from 'react';
 import { CirclePicker } from 'react-color';
-import { BackgroundStyle } from 'src/common/contracts/BackgroundStyle';
-import { PickerColor } from 'src/common/contracts/Color';
-import { HollerSubmitDto } from 'src/common/contracts/Dto';
-import { WelcomeProps } from 'src/common/contracts/Props';
+import { BackgroundStyle } from '../common/contracts/BackgroundStyle';
+import { PickerColor } from '../common/contracts/Color';
+import { HollerSubmitDto } from '../common/contracts/Dto';
+import { WelcomeProps } from '../common/contracts/Props';
 
 export const WelcomeMenu = (props: WelcomeProps) => {
   //#region State & Refs

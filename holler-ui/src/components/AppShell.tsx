@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { hollerEnvconfig } from 'src/common/config/Dev.config';
-import { HollerSubmitDto } from 'src/common/contracts/Dto';
+import { hollerEnvconfig } from '../common/config/Dev.config';
+import { HollerSubmitDto } from '../common/contracts/Dto';
 import { AppState } from '../common/contracts/States';
 import { WelcomeMenu } from './WelcomeMenu';
 
