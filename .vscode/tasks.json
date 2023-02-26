@@ -35,7 +35,7 @@
       "type": "shell",
       "detail": "Build and run holler ui",
       "dependsOrder": "sequence",
-      "dependsOn": ["BuildUi", "RunTauri"],
+      "dependsOn": ["BuildApp", "RunTauri"],
       "group": {
         "kind": "build",
         "isDefault": false
