@@ -1,5 +1,5 @@
 import { BackgroundStyle } from '../contracts/BackgroundStyle';
-import { HollerEnvConfig } from './HollerEnvironmentConfig';
+import { HollerEnvConfig } from './HollerEnvConfig';
 
 export const hollerEnvconfig: HollerEnvConfig = {
   state: {

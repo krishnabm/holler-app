@@ -1,4 +1,5 @@
 import { BackgroundStyle } from './BackgroundStyle';
+import { HollerSubmitDto } from './Dto';
 
 export interface WelcomeProps {
   // Sentence to Holler!
@@ -9,4 +10,6 @@ export interface WelcomeProps {
     style: BackgroundStyle;
     value: string;
   };
+
+  onHollerSubmit: (submitData: HollerSubmitDto) => {};
 }
