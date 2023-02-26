@@ -10,6 +10,7 @@ module.exports = {
     build: {
       default: series('nps clean', 'nps build.ui'),
       ui: 'webpack --config ./conf/build/webpack.config.js',
+      // Unused, use webpack build instead
       tsc: 'tsc -p ./holler-ui/tsconfig.json',
     },
     clean: {

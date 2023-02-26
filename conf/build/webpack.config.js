@@ -52,12 +52,11 @@ module.exports = {
         path: path.resolve(__dirname, "../../dist/holler-ui"),
         filename: "main.js",
         publicPath: "auto", 
-        library: { // There is also an old syntax for this available (click to show)
+        library: {
           type: "umd", // universal module definition
           name: "MyLibrary",
         },
-        uniqueName: "my-application", // (defaults to package.json "name")
-        // unique name for this build to avoid conflicts with other builds in the same HTML
+        uniqueName: "holler-app", // (defaults to package.json "name")
     },
     plugins: [
       new HtmlWebpackPlugin({

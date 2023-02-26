@@ -16,7 +16,6 @@
     "suppressCreatePullRequestPrompt": true
   },
   "prettier.configPath": "conf/lint/.prettierrc",
-  "editor.tabSize": 2,
   "emeraldwalk.runonsave": {
     "commands": [
       {
