@@ -9,7 +9,7 @@ export const WelcomeMenu = (props: WelcomeProps) => {
   //#region State & Refs
   let pickedBgColor: { style: BackgroundStyle; value: string } =
     props.background;
-  const sentenceInputRef = useRef(null);
+  const sentenceInputRef = useRef<HTMLTextAreaElement>(null);
   //#endregion
 
   //#region Handlers
@@ -20,7 +20,7 @@ export const WelcomeMenu = (props: WelcomeProps) => {
 
   const submitHandler = (event: SyntheticEvent) => {
     event.preventDefault();
-    let sentence: string = sentenceInputRef.current!;
+    let sentence: string = sentenceInputRef.current!.value;
     sentence = sentence ? sentence : '';
 
     props.onHollerSubmit({

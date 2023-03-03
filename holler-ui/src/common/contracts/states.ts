@@ -9,4 +9,6 @@ export interface AppState {
     style: BackgroundStyle;
     value: string;
   };
+
+  pageState: 'form' | 'holler';
 }
