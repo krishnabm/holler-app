@@ -4,7 +4,7 @@ module.exports = {
   scripts: {
     test: 'echo "Error: no test specified"',
     serve: {
-      default: 'tauri dev',
+      default: 'nps serve.dev',
       dev: 'tauri dev',
     },
     build: {
@@ -14,7 +14,13 @@ module.exports = {
       tsc: 'tsc -p ./holler-ui/tsconfig.json',
     },
     clean: {
-      default: series('rimraf dist'),
+      default: 'nps clean.purgeUi',
+      purgeAll: series('nps purgeCore', 'nps purgeUi'),
+      purgeCore: 'rimraf holler-core/target',
+      purgeUi: 'rimraf dist',
     },
+    purge: {
+      default: series('rimraf dist', 'rimraf holler-core/target')
+    }
   }
 };
