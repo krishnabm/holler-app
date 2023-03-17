@@ -15,7 +15,7 @@ module.exports = {
     },
     clean: {
       default: 'nps clean.purgeUi',
-      purgeAll: series('nps purgeCore', 'nps purgeUi'),
+      purgeAll: series('nps clean.purgeCore', 'nps clean.purgeUi'),
       purgeCore: 'rimraf holler-core/target',
       purgeUi: 'rimraf dist',
     },
