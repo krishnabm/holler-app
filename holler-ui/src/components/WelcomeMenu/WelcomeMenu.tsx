@@ -1,9 +1,9 @@
 import React, { SyntheticEvent, useRef } from 'react';
 import { CirclePicker } from 'react-color';
-import { BackgroundStyle } from '../common/contracts/BackgroundStyle';
-import { PickerColor } from '../common/contracts/Color';
-import { HollerSubmitDto } from '../common/contracts/Dto';
-import { WelcomeProps } from '../common/contracts/Props';
+import { BackgroundStyle } from '../../common/contracts/BackgroundStyle';
+import { PickerColor } from '../../common/contracts/Color';
+import { HollerSubmitDto } from '../../common/contracts/Dto';
+import { WelcomeProps } from '../../common/contracts/Props';
 
 export const WelcomeMenu = (props: WelcomeProps) => {
   //#region State & Refs
@@ -13,7 +13,7 @@ export const WelcomeMenu = (props: WelcomeProps) => {
   //#endregion
 
   //#region Handlers
-  const handleBgChange = (color: PickerColor, event: SyntheticEvent) => {
+  const handleBgChange = (color: PickerColor, _event: SyntheticEvent) => {
     pickedBgColor.style = BackgroundStyle.hex;
     pickedBgColor.value = color.hex;
   };

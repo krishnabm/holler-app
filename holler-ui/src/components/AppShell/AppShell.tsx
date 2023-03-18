@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { hollerEnvconfig } from '../common/config/Dev.config';
-import { HollerSubmitDto } from '../common/contracts/Dto';
-import { AppState } from '../common/contracts/States';
-import { WelcomeMenu } from './WelcomeMenu';
-import { RenderHoller } from './RenderHoller';
+import { hollerEnvconfig } from '../../common/config/Dev.config';
+import { HollerSubmitDto } from '../../common/contracts/Dto';
+import { AppState } from '../../common/contracts/States';
+import { WelcomeMenu } from '../WelcomeMenu/WelcomeMenu';
+import { RenderHoller } from '../RenderHoller/RenderHoller';
 
 export const AppShell = (props) => {
   const initialState: AppState = { ...hollerEnvconfig.state };

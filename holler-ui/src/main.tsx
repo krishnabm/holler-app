@@ -4,7 +4,7 @@ import { getName, getTauriVersion, getVersion } from '@tauri-apps/api/app';
 import { invoke } from '@tauri-apps/api/tauri';
 
 // Components
-import { AppShell } from './components/AppShell';
+import { AppShell } from './components/AppShell/AppShell';
 // Styles
 import './styles/main.scss';
 

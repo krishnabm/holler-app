@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { delay, from, interval, map, take } from 'rxjs';
-import { RenderProps } from '../common/contracts/Props';
+import { RenderProps } from '../../common/contracts/Props';
 
 export const RenderHoller = (props: RenderProps) => {
   let renderSentence = props.sentence.trim().replace(/\s{2,}/, ' ');
