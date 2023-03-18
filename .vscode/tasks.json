@@ -31,7 +31,7 @@
       }
     },
     {
-      "label": "Build & Run",
+      "label": "Build-Run",
       "type": "shell",
       "detail": "Build and run holler ui",
       "dependsOrder": "sequence",
@@ -39,6 +39,20 @@
       "group": {
         "kind": "build",
         "isDefault": false
+      }
+    },
+    {
+      "label": "DeepClean",
+      "detail": "Clean all bin & dist",
+      "type": "shell",
+      "command": "npm start clean.purgeAll",
+      "windows": {
+        "command": "npm start clean.purgeAll"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
       }
     }
   ]
