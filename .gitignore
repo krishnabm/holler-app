@@ -6,3 +6,6 @@
 
 # Dev artifacts
 # **/.vscode/**/*
+
+# SCSS Module TSD files
+*.scss.d.ts
