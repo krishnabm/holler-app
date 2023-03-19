@@ -22,6 +22,7 @@
   "homepage": "https://github.com/krishnabm/holler-app#readme",
   "devDependencies": {
     "css-loader": "^6.7.1",
+    "css-modules-typescript-loader": "^2.0.1",
     "html-loader": "^4.1.0",
     "html-webpack-plugin": "^5.5.0",
     "nps": "^5.10.0",

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { RenderProps } from '../../common/contracts/Props';
+import styles from './RenderHoller.module.scss';
 
 export const RenderHoller = (props: RenderProps) => {
   let renderSentence = props.sentence.trim().replace(/\s{2,}/, ' ');
@@ -20,7 +21,7 @@ export const RenderHoller = (props: RenderProps) => {
 
   return (
     <div className="render-canvas">
-      <span>{renderWord}</span>
+      <span className={styles['rendered-word']}>{renderWord}</span>
     </div>
   );
 };
