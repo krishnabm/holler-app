@@ -7,7 +7,7 @@ license = "gpl-3.0"
 repository = "https://github.com/krishnabm/holler-app"
 default-run = "holler-app"
 edition = "2021"
-rust-version = "1.57"
+rust-version = "1.64"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -17,7 +17,11 @@ tauri-build = { version = "1.0.0", features = [] }
 [dependencies]
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "1.2.4", features = ["dialog-message", "http-request", "notification-all"] }
+tauri = { version = "1.2.4", features = [
+  "dialog-message",
+  "http-request",
+  "notification-all",
+] }
 
 [features]
 # by default Tauri runs in production mode
