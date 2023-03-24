@@ -1,6 +1,6 @@
 import { BackgroundStyle } from './BackgroundStyle';
 import { HollerSubmitDto } from './Dto';
-
+import { CSSObject } from '../types';
 interface BaseHollerProps {
   // Sentence to Holler!
   sentence: string;
@@ -16,3 +16,8 @@ export interface WelcomeProps extends BaseHollerProps {
 }
 
 export interface RenderProps extends BaseHollerProps {}
+
+export interface KeframeProps {
+  name: string;
+  animationProps: CSSObject | Array<React.CSSProperties | string>;
+}

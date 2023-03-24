@@ -1,3 +1,7 @@
 .rendered-word {
   color: red;
 }
+
+.rendered-word::after {
+  animation: renderHollerAnimation 5s linear infinite;
+}
