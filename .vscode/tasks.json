@@ -54,6 +54,20 @@
         "reveal": "always",
         "panel": "shared"
       }
+    },
+    {
+      "label": "RerunLastBuild",
+      "detail": "Clean all bin & dist",
+      "type": "shell",
+      "command": "./holler-core/target/debug/holler-app",
+      "windows": {
+        "command": ".\\holler-core\\target\\debug\\holler-app.exe"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
     }
   ]
 }
