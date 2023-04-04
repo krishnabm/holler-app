@@ -1,48 +1,71 @@
 import React, { useEffect, useState } from 'react';
-import { RenderProps } from '../../common/contracts/Props';
+import { RenderProps } from '../../common/contracts/props';
 import styles from './RenderHoller.module.scss';
-import { KeyframeHelper } from '../../styles/helpers/KeyframeHelper';
+import { interval, map, take } from 'rxjs';
+import fitty from 'fitty';
+import Color from 'color';
+var complementaryColors = require('complementary-colors');
 
 export const RenderHoller = (props: RenderProps) => {
   let renderSentence = props.sentence.trim().replace(/\s{2,}/, ' ');
+  let [renderWord, updateText] = useState('');
 
-  let [keyframeSteps, updateKeyframes] = useState([] as React.CSSProperties[]);
+  let fontColor = Color(props.background.value);
 
-  // let [renderWord, updateText] = useState('');
+  var pallete: any[] = new complementaryColors(fontColor.hex())
+    .square()
+    .map((rgbColorObj) => Color(rgbColorObj).desaturate(0.5).lightness(70));
+
+  //#region Dynamic styles
+  const renderWordStyles = {
+    color: fontColor.hex(),
+  };
+  //#endregion
 
   useEffect(() => {
-    let wordList = renderSentence.split(' ').reverse();
-    let keyframeStepsObj: React.CSSProperties[] = [];
-    let onUnmount = () => {};
+    let wordList = renderSentence.split(' ');
 
-    if (wordList.length < 1) {
-      updateKeyframes(keyframeStepsObj);
-      return onUnmount;
-    }
-
-    while (wordList.length) {
-      const word = wordList.pop();
-
-      keyframeStepsObj.push(
-        {
-          content: `${word}`,
-          opacity: '100%',
+    interval(1000)
+      .pipe(
+        take(wordList.length),
+        map((i) => wordList[i])
+      )
+      .subscribe({
+        next: (word) => {
+          updateText(word);
+          fitty('#rendered-word-element');
+          updateBodyBgColor(pallete.slice(1));
         },
-        {
-          opacity: '0%',
-        }
-      );
-    }
-    updateKeyframes(keyframeStepsObj);
+        error: (_) => console.log('error'),
+      });
   }, [renderSentence]);
 
   return (
-    <div className="render-canvas">
-      <KeyframeHelper
-        name="renderHollerAnimation"
-        animationProps={keyframeSteps}
-      ></KeyframeHelper>
-      <span className={styles['rendered-word']}></span>
+    <div className={styles['render-canvas']}>
+      <span
+        className={styles['rendered-word']}
+        style={renderWordStyles}
+        id="rendered-word-element"
+      >
+        {renderWord}
+      </span>
     </div>
   );
 };
+
+// helper
+function updateBodyBgColor(bgOptionsColor: any[]) {
+  let bgIdx = Math.round(Math.random() * (bgOptionsColor.length - 1));
+  let currentBGHex =
+    document.documentElement.style.getPropertyValue('--bodyBgColor');
+
+  if (
+    currentBGHex.toLowerCase() === bgOptionsColor[bgIdx].hex().toLowerCase()
+  ) {
+    bgIdx = (bgIdx + 1) % bgOptionsColor.length;
+  }
+  document.documentElement.style.setProperty(
+    '--bodyBgColor',
+    bgOptionsColor[bgIdx].hex()
+  );
+}

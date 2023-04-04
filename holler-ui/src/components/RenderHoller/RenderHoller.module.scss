@@ -1,7 +1,7 @@
 .rendered-word {
-  color: red;
+  font-family: Verdana;
 }
 
-.rendered-word::after {
-  animation: renderHollerAnimation 5s linear infinite;
+.render-canvas {
+  scale: 1;
 }

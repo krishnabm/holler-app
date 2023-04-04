@@ -9,9 +9,13 @@
   "author": "Krishna B.M.",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^18.15.11",
     "@types/react": "^16.0.25"
   },
   "dependencies": {
+    "color": "^4.2.3",
+    "complementary-colors": "^1.0.6",
+    "fitty": "^2.3.6",
     "react": "^18.2.0",
     "react-color": "^2.19.3",
     "react-dom": "^18.2.0",

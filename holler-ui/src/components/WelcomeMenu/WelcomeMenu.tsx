@@ -3,7 +3,7 @@ import { CirclePicker } from 'react-color';
 import { BackgroundStyle } from '../../common/contracts/BackgroundStyle';
 import { PickerColor } from '../../common/contracts/Color';
 import { HollerSubmitDto } from '../../common/contracts/Dto';
-import { WelcomeProps } from '../../common/contracts/Props';
+import { WelcomeProps } from '../../common/contracts/props';
 
 export const WelcomeMenu = (props: WelcomeProps) => {
   //#region State & Refs
@@ -37,7 +37,7 @@ export const WelcomeMenu = (props: WelcomeProps) => {
           ref={sentenceInputRef}
           defaultValue={props.sentence}
         ></textarea>
-        <label>Background Color: </label>
+        <label>Text Color: </label>
         <CirclePicker color={pickedBgColor} onChangeComplete={handleBgChange} />
         <button type="submit">Go</button>
       </form>
