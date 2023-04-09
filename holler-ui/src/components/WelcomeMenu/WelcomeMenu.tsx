@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useRef } from 'react';
+import React, { SyntheticEvent, useRef, useState } from 'react';
 import { CirclePicker } from 'react-color';
 import { BackgroundStyle } from '../../common/contracts/BackgroundStyle';
 import { PickerColor } from '../../common/contracts/Color';
@@ -7,15 +7,14 @@ import { WelcomeProps } from '../../common/contracts/props';
 
 export const WelcomeMenu = (props: WelcomeProps) => {
   //#region State & Refs
-  let pickedBgColor: { style: BackgroundStyle; value: string } =
-    props.background;
+  let [pickedColor, updatePickedColor] = useState(props.textColor);
   const sentenceInputRef = useRef<HTMLTextAreaElement>(null);
   //#endregion
 
   //#region Handlers
   const handleBgChange = (color: PickerColor, _event: SyntheticEvent) => {
-    pickedBgColor.style = BackgroundStyle.hex;
-    pickedBgColor.value = color.hex;
+    updatePickedColor(color.hex);
+  };
   };
 
   const submitHandler = (event: SyntheticEvent) => {

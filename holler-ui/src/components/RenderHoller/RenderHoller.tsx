@@ -10,7 +10,7 @@ export const RenderHoller = (props: RenderProps) => {
   let renderSentence = props.sentence.trim().replace(/\s{2,}/, ' ');
   let [renderWord, updateText] = useState('');
 
-  let fontColor = Color(props.background.value);
+  let fontColor = Color(props.textColor);
 
   var pallete: any[] = new complementaryColors(fontColor.hex())
     .square()

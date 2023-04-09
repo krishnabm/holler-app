@@ -9,5 +9,6 @@ export const hollerEnvconfig: HollerEnvConfig = {
     },
     sentence: '',
     pageState: 'form',
+    textColor: '#3f51b5',
   },
 };

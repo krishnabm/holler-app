@@ -10,6 +10,8 @@ interface BaseHollerProps {
     style: BackgroundStyle;
     value: string;
   };
+
+  textColor: string;
 }
 export interface WelcomeProps extends BaseHollerProps {
   onHollerSubmit: (submitData: HollerSubmitDto) => void;

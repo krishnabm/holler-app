@@ -10,5 +10,6 @@ export interface AppState {
     value: string;
   };
 
+  textColor: string;
   pageState: 'form' | 'holler';
 }
