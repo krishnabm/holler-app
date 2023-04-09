@@ -33,7 +33,11 @@ export const RenderHoller = (props: RenderProps) => {
       .subscribe({
         next: (word) => {
           updateText(word);
-          fitty('#rendered-word-element');
+          fitty('#rendered-word-element', {
+            minSize: 16,
+            multiLine: true,
+          });
+
           updateBodyBgColor(pallete.slice(1));
         },
         error: (_) => console.log('error'),
