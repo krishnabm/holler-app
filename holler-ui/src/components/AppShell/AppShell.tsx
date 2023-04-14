@@ -15,6 +15,7 @@ export const AppShell = (props) => {
       background: submitData.background,
       sentence: submitData.sentence,
       pageState: 'holler',
+      textColor: submitData.textColor,
     });
   };
 
@@ -24,11 +25,16 @@ export const AppShell = (props) => {
       background={state.background}
       sentence={state.sentence}
       onHollerSubmit={handleSubmit}
+      textColor={state.textColor}
     />
   );
 
   let RenderHollerElem = state.pageState === 'holler' && (
-    <RenderHoller sentence={state.sentence} background={state.background} />
+    <RenderHoller
+      sentence={state.sentence}
+      background={state.background}
+      textColor={state.textColor}
+    />
   );
 
   return (

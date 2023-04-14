@@ -69,7 +69,9 @@
         "height": 600,
         "resizable": false,
         "title": "holler",
-        "width": 800
+        "width": 800,
+        "decorations": true,
+        "center": true
       }
     ]
   }

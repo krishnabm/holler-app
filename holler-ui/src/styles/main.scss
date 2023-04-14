@@ -1,7 +1,18 @@
 $white: #ffffff;
-$ubuntu-font: "Ubuntu", "Arial", "Helvetica", sans-serif;
 
-.app-heading {
-  color: red;
-  font-size: xx-large;
+:root {
+  --bodyBgColor: $white;
+}
+
+body {
+  background-color: var(--bodyBgColor);
+  margin: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app_content {
+  position: relative;
+  height: 100vh;
+  scale: 0.85;
 }
