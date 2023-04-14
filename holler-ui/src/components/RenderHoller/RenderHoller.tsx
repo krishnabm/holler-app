@@ -23,7 +23,7 @@ export const RenderHoller = (props: RenderProps) => {
   //#endregion
 
   useEffect(() => {
-    let wordList = renderSentence.split(' ');
+    let wordList = renderSentence.split(/[\s]+/);
 
     interval(1000)
       .pipe(
